@@ -13,22 +13,14 @@ createApp({
         axios
           .get("https://flynn.boolean.careers/exercises/api/random/mail")
           .then((response) => {
-            this.isLoading = false;
             this.listaMail.push(response.data.response);
+
+            if (this.listaMail.length == 10) {
+              this.isLoading = true;
+              console.log("pieno");
+            }
           });
       }
-      this.isLoading = true;
     },
   },
-
-  // mounted() {
-  //   for (let i = 0; i < 10; i++) {
-  //     axios
-  //       .get("https://flynn.boolean.careers/exercises/api/random/mail")
-  //       .then((response) => {
-  //         this.listaMail.push(response.data.response);
-  //         console.log(response);
-  //       });
-  //   }
-  // },
 }).mount("#app");

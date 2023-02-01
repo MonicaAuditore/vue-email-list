@@ -15,8 +15,8 @@
   <body>
     <div id="app">
       <div class="listaIndirizziMail">
-        <ul>
-          <li v-for="(singoloIndirizzo, index) in listaMail" v-if="isLoading">
+        <ul v-if="isLoading">
+          <li v-for="(singoloIndirizzo, index) in listaMail">
             {{singoloIndirizzo}}
           </li>
         </ul>
